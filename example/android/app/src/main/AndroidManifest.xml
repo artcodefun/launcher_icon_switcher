@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="launcher_icon_switcher_example"
+        android:label="Launcher Icon Switcher"
         android:name="${applicationName}"
         android:icon="@mipmap/white_blue">
         <activity
