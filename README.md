@@ -1,6 +1,6 @@
 # Launcher Icon Switcher
 
-<img src="https://github.com/artcodefun/launcher_icon_switcher/blob/main/.github/assets/switch-them.png?raw=true" height="138px" width="522px">
+<img src="https://github.com/artcodefun/launcher_icon_switcher/blob/main/.github/assets/switch-them.png?raw=true" width="522px">
 
 [![pub version](https://img.shields.io/pub/v/launcher_icon_switcher.svg)](https://pub.dev/packages/launcher_icon_switcher)
 [![likes](https://img.shields.io/pub/likes/launcher_icon_switcher)](https://pub.dev/packages/launcher_icon_switcher/score)
@@ -12,7 +12,7 @@ A Flutter plugin that allows you to dynamically change your app launcher icon.
 
 | iOS                                                                                                            |  Android                                                                                                           |
 |----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| <img src="https://github.com/artcodefun/launcher_icon_switcher/blob/main/.github/assets/ios-example.gif?raw=true" height="750px" width="342px"> | <img src="https://github.com/artcodefun/launcher_icon_switcher/blob/main/.github/assets/android-example.gif?raw=true" height="750px" width="338px"> |
+| <img src="https://github.com/artcodefun/launcher_icon_switcher/blob/main/.github/assets/ios-example.gif?raw=true" width="342px"> | <img src="https://github.com/artcodefun/launcher_icon_switcher/blob/main/.github/assets/android-example.gif?raw=true" width="338px"> |
 
 ## Generating icons
 First you'll need to generate some icons for your app. For that you can use [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) package. Use CamelCase for your IOS icon names, as these same names will also be used for activity aliases on Android.
@@ -94,7 +94,7 @@ Open your ios project in Xcode, select your app target, go to __Build Settings__
 * and all your icons to `Alternate App Icon Sets`
 * set `Primary App Icon Set Name` to your default icon
 
-<img src="https://github.com/artcodefun/launcher_icon_switcher/blob/main/.github/assets/xcode-explanation.png?raw=true" height="660px" width="1124px">
+<img src="https://github.com/artcodefun/launcher_icon_switcher/blob/main/.github/assets/xcode-explanation.png?raw=true" width="1124px">
 </details>
 
 ## Usage
