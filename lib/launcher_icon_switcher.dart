@@ -11,10 +11,12 @@ class LauncherIconSwitcher {
   }
 
   /// Finds out which icon is currently set
-  Future<String> getCurrentIcon() => LauncherIconSwitcherPlatform.instance.getCurrentIcon();
+  Future<String> getCurrentIcon() =>
+      LauncherIconSwitcherPlatform.instance.getCurrentIcon();
 
   /// Sets new [icon].
   /// If changing icon requires closing the app and [shouldKeepAlive] is true, plugin will attempt to restart the app
   Future<void> setIcon(String icon, {bool shouldKeepAlive = true}) =>
-      LauncherIconSwitcherPlatform.instance.setIcon(icon, shouldKeepAlive: shouldKeepAlive);
+      LauncherIconSwitcherPlatform.instance
+          .setIcon(icon, shouldKeepAlive: shouldKeepAlive);
 }

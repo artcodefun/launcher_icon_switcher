@@ -8,7 +8,8 @@ abstract class LauncherIconSwitcherPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static LauncherIconSwitcherPlatform _instance = MethodChannelLauncherIconSwitcher();
+  static LauncherIconSwitcherPlatform _instance =
+      MethodChannelLauncherIconSwitcher();
 
   /// The default instance of [LauncherIconSwitcherPlatform] to use.
   ///
@@ -26,7 +27,8 @@ abstract class LauncherIconSwitcherPlatform extends PlatformInterface {
   /// Initializes plugin with [icons] and [defaultIcon].
   /// Should be called before any other method
   Future<void> initialize(List<String> icons, String defaultIcon) {
-    throw UnimplementedError('initialize(List<String> icons, String defaultIcon) has not been implemented.');
+    throw UnimplementedError(
+        'initialize(List<String> icons, String defaultIcon) has not been implemented.');
   }
 
   /// Finds out which icon is currently set
@@ -37,6 +39,7 @@ abstract class LauncherIconSwitcherPlatform extends PlatformInterface {
   /// Sets new [icon].
   /// If changing icon requires closing the app and [shouldKeepAlive] is true, plugin will attempt to restart the app
   Future<void> setIcon(String icon, {bool shouldKeepAlive = true}) {
-    throw UnimplementedError('setIcon(String icon, {bool shouldKeepAlive = true}) has not been implemented.');
+    throw UnimplementedError(
+        'setIcon(String icon, {bool shouldKeepAlive = true}) has not been implemented.');
   }
 }

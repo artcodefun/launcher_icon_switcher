@@ -35,7 +35,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future initPlugin() async {
-    await _launcherIconSwitcherPlugin.initialize(AppIcons.values.map((e) => e.name).toList(), AppIcons.whiteBlue.name);
+    await _launcherIconSwitcherPlugin.initialize(
+        AppIcons.values.map((e) => e.name).toList(), AppIcons.whiteBlue.name);
     currentIcon = await _launcherIconSwitcherPlugin.getCurrentIcon();
     setState(() => isInitialized = true);
   }
@@ -67,7 +68,10 @@ class _MyAppState extends State<MyApp> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
                                   border: Border.all(
-                                      color: currentIcon == e.name ? Colors.green : Colors.black45, width: 2),
+                                      color: currentIcon == e.name
+                                          ? Colors.green
+                                          : Colors.black45,
+                                      width: 2),
                                   image: DecorationImage(
                                       image: AssetImage(
                                           'assets/sharp-${e.name.replaceAllMapped(RegExp(r'[A-Z]'), (match) => ' ${match.group(0)!.toLowerCase()}').trim().split(' ').join('-')}.png'))),

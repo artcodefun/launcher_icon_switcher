@@ -1,6 +1,6 @@
 name: launcher_icon_switcher
-description: A Flutter plugin for switching your app launcher icons.
-version: 0.0.1
+description: A Flutter plugin that allows you to switch your app launcher icon or check the currently set one.
+version: 0.0.2
 homepage: https://github.com/artcodefun/launcher_icon_switcher
 issue_tracker: https://github.com/artcodefun/launcher_icon_switcher/issues
 

@@ -6,6 +6,7 @@ public class LauncherIconSwitcherPlugin: NSObject, FlutterPlugin {
     FlutterError(code: "NO_ICONS",message: "No icons were provided", details: nil)
     private static let notInitializedError =
     FlutterError(code: "NOT_INITIALIZED", message:"Plugin was not initialized properly", details: nil)
+    private static let cannotSetErrorCode = "CANNOT_SET_ICON"
     private var icons: [String] = []
     private var defaultIcon: String = ""
     private var isInitialized = false
@@ -46,9 +47,15 @@ public class LauncherIconSwitcherPlugin: NSObject, FlutterPlugin {
             let args = call.arguments as! NSDictionary
             let targetIcon = args["icon"] as! String
             
-            UIApplication.shared.setAlternateIconName(targetIcon == defaultIcon ? nil : targetIcon)
-            
-            result(nil)
+            UIApplication.shared.setAlternateIconName(targetIcon == defaultIcon ? nil : targetIcon) {
+                err in
+                result(err == nil ?
+                       nil :
+                        FlutterError(code: LauncherIconSwitcherPlugin.cannotSetErrorCode,
+                                     message: err?.localizedDescription,
+                                     details: nil)
+                )
+            }
         default:
             result(FlutterMethodNotImplemented)
         }

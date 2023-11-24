@@ -11,12 +11,15 @@ class MethodChannelLauncherIconSwitcher extends LauncherIconSwitcherPlatform {
 
   @override
   Future<void> initialize(List<String> icons, String defaultIcon) async =>
-      await methodChannel.invokeMethod('initialize', {'icons': icons, 'defaultIcon': defaultIcon});
+      await methodChannel.invokeMethod(
+          'initialize', {'icons': icons, 'defaultIcon': defaultIcon});
 
   @override
-  Future<String> getCurrentIcon() async => (await methodChannel.invokeMethod<String>('getCurrentIcon'))!;
+  Future<String> getCurrentIcon() async =>
+      (await methodChannel.invokeMethod<String>('getCurrentIcon'))!;
 
   @override
   Future<void> setIcon(String icon, {bool shouldKeepAlive = true}) async =>
-      await methodChannel.invokeMethod('setIcon', {'icon': icon, 'shouldKeepAlive': shouldKeepAlive});
+      await methodChannel.invokeMethod(
+          'setIcon', {'icon': icon, 'shouldKeepAlive': shouldKeepAlive});
 }
