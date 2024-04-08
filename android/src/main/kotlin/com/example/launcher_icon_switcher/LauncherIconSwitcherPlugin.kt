@@ -92,8 +92,6 @@ class LauncherIconSwitcherPlugin : FlutterPlugin, MethodCallHandler, ActivityAwa
                         if (i == targetIcon) COMPONENT_ENABLED_STATE_ENABLED else COMPONENT_ENABLED_STATE_DISABLED,
                         PackageManager.DONT_KILL_APP
                     )
-                    pm.setComponentEnabledSetting(ComponentName(packageName,"$packageName.MainActivity"),
-                    COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP)
                 }
 
                 if (shouldKeepAlive) {
@@ -107,6 +105,7 @@ class LauncherIconSwitcherPlugin : FlutterPlugin, MethodCallHandler, ActivityAwa
                             Intent.FLAG_ACTIVITY_CLEAR_TASK
                     activity!!.finish()
                     startActivity(activity!!.applicationContext, intent, null)
+
                 }
 
                 return result.success(null)
