@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 enum AppIcons {
-  whiteBlue('WhiteBlue'),
+  mainActivity('MainActivity'),
   whitePink('WhitePink'),
   blackBlue('BlackBlue'),
   blackPink('BlackPink');
@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
 
   Future initPlugin() async {
     await _launcherIconSwitcherPlugin.initialize(
-        AppIcons.values.map((e) => e.name).toList(), AppIcons.whiteBlue.name);
+        AppIcons.values.map((e) => e.name).toList(), AppIcons.mainActivity.name);
     currentIcon = await _launcherIconSwitcherPlugin.getCurrentIcon();
     setState(() => isInitialized = true);
   }
