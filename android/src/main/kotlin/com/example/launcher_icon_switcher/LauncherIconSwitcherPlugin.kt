@@ -87,13 +87,13 @@ class LauncherIconSwitcherPlugin : FlutterPlugin, MethodCallHandler, ActivityAwa
                 val packageName = ctx.packageName
 
                 for (i in icons) {
-                    pm.setComponentEnabledSetting(ComponentName(packageName,"$packageName.MainActivity"),
-                    COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP)
                     pm.setComponentEnabledSetting(
                         ComponentName(packageName, "$packageName.$i"),
                         if (i == targetIcon) COMPONENT_ENABLED_STATE_ENABLED else COMPONENT_ENABLED_STATE_DISABLED,
                         PackageManager.DONT_KILL_APP
                     )
+                    pm.setComponentEnabledSetting(ComponentName(packageName,"$packageName.MainActivity"),
+                    COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP)
                 }
 
                 if (shouldKeepAlive) {
