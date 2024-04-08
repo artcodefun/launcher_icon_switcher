@@ -11,7 +11,7 @@
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize"
-            android:enabled="false"
+            android:enabled="true"
             >
             <!-- Specifies an Android theme to apply to this Activity as soon as
                  the Android process has started. This theme is visible to the user
@@ -28,7 +28,7 @@
         </activity>
         <activity-alias
             android:name=".WhiteBlue"
-            android:enabled="true"
+            android:enabled="false"
             android:exported="true"
             android:targetActivity=".MainActivity">
             <intent-filter>
