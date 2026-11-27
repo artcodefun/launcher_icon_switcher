@@ -22,7 +22,13 @@ allprojects {
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
+def agpMajor = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize('.')[0].toInteger()
+def useBuiltInKotlin = agpMajor >= 9 &&
+        (providers.gradleProperty('android.builtInKotlin').orNull?.toBoolean() ?: true)
+
+if (!useBuiltInKotlin) {
+    apply plugin: 'kotlin-android'
+}
 
 android {
     if (project.android.hasProperty("namespace")) {
@@ -34,15 +40,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-        test.java.srcDirs += 'src/test/kotlin'
     }
 
     defaultConfig {
@@ -64,5 +61,11 @@ android {
                showStandardStreams = true
             }
         }
+    }
+}
+
+if (!useBuiltInKotlin) {
+    android.kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
