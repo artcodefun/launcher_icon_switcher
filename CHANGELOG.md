@@ -1,3 +1,7 @@
+## 0.0.3
+* Migrate Android builds to support built-in Kotlin.
+* Require Flutter 3.44 and Dart 3.12 or later.
+
 ## 0.0.2
 * Added completionHandler for setAlternateIconName on IOS
 
